@@ -26,23 +26,23 @@
 
     <script src="todo.js"></script>
     <script>
-        document.getElementById("addToo")addEventListener("click", function(){
-            var value = document.getElementById("todoInput").value
-            if(value) {
-                addToo(value);
-                document.getElementById("addToo").value = "";
+        document.getElementById("addToo").addEventListener("click", function(){
+            var value = document.getElementById("todoInput").value;
+            if (value) {
+                addTodo(value);
+                document.getElementById("todoInput").value = "";
                 storeTodos();
             }
         });
-        function addToo(text) {
+        function addTodo(text) {
             var list = document.getElementById("todoList");
 
-            var item = document.createElement("list");
+            var item = document.createElement("li");
             item.innerText = text;
-            item.classList.add("list-group-item")
+            item.classList.add("list-group-item");
 
             var removeButton = document.createElement("button");
-            removeButton.innerText = remove;
+            removeButton.innerText = "remove";
             removeButton.classList.add("btn", "btn-danger", "btn-sm", "float-end");
             removeButton.addEventListener("click", function() {
                 item.parentNode.removeChild(item);
